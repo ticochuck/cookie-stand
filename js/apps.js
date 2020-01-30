@@ -29,27 +29,44 @@ var seattleLocation = {
   ]
 };
 
+var seattleElement = document.getElementById('seattle');
+
 var cookiesPerHourElement = document.getElementById('cookiesPerHour');
+
+var listSeattleElement = document.createElement('h2');
+listSeattleElement.textContent = seattleLocation.Location;
+seattleElement.appendChild(listSeattleElement);
+
+
 
 //calculates the number of cookies per around, and appends it to the each object, inside the hourOperation Array
 seattleLocation.hourOperation.grandTotal = 0;
 for (var i = 0; i < seattleLocation.hourOperation.length; i++) {
   seattleLocation.hourOperation[i].totalcookies = Math.ceil(seattleLocation.hourOperation[i].totalcookies = seattleLocation.avgCookiePerCust * seattleLocation.custPerHour());
   seattleLocation.hourOperation.grandTotal = seattleLocation.hourOperation.grandTotal + seattleLocation.hourOperation[i].totalcookies;
+  var listElement = document.createElement('li');
+  // give it conent
+  listElement.textContent = seattleLocation.hourOperation[i].time + seattleLocation.hourOperation[i].totalcookies;
+  // append the elemnt to the dom
+  cookiesPerHourElement.appendChild(listElement);
+  if (i > 13) {
+    listElement.textContent = seattleLocation.hourOperation[i].total + seattleLocation.hourOperation.grandTotal;
+  }
 }
 
-//prints each object in the hourOperarion Array in sales.html
-for(var i = 0; i < seattleLocation.hourOperation.length; i++){
-    // create the element
-    var listElement = document.createElement('li');
-    // give it conent
-    listElement.textContent = seattleLocation.hourOperation[i].time + seattleLocation.hourOperation[i].totalcookies;
-    // append the elemnt to the dom
-    cookiesPerHourElement.appendChild(listElement);
-    if (i > 13) {
-      listElement.textContent = seattleLocation.hourOperation[i].total + seattleLocation.hourOperation.grandTotal;
-    }
-}
+
+
+// for(var i = 0; i < seattleLocation.hourOperation.length; i++){
+//     // create the element
+//     var listElement = document.createElement('li');
+//     // give it conent
+//     listElement.textContent = seattleLocation.hourOperation[i].time + seattleLocation.hourOperation[i].totalcookies;
+//     // append the elemnt to the dom
+//     cookiesPerHourElement.appendChild(listElement);
+//     if (i > 13) {
+//       listElement.textContent = seattleLocation.hourOperation[i].total + seattleLocation.hourOperation.grandTotal;
+//     }
+// }
 
 
 
