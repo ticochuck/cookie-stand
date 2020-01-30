@@ -2,12 +2,13 @@
 
 var seattleLocation = {
   Location: 'Seattle',
-  minCustPerHour: 23,
-  maxCustPerHour: 65,
+  minCustPerHour: 2,
+  maxCustPerHour: 6,
   avgCookiePerCust: 6.3,
   custPerHour: function getRandomInt() {
-    this.minCustPerHour = Math.ceil(this.minCustPerHour);
-    this.maxCustPerHour = Math.floor(this.maxCustPerHour);
+    // this.minCustPerHour = Math.ceil(this.minCustPerHour);
+    // this.maxCustPerHour = Math.floor(this.maxCustPerHour);
+    
     return Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour; 
   },
   hourOperation: [
@@ -28,6 +29,9 @@ var seattleLocation = {
     {total: 'Total: ', grandTotal: 0}
   ]
 };
+console.log(seattleLocation.minCustPerHour);
+console.log(seattleLocation.maxCustPerHour);
+console.log(seattleLocation.custPerHour());
 
 var seattleElement = document.getElementById('seattle');
 
@@ -51,6 +55,7 @@ for (var i = 0; i < seattleLocation.hourOperation.length; i++) {
   cookiesPerHourElement.appendChild(listElement);
   if (i > 13) {
     listElement.textContent = seattleLocation.hourOperation[i].total + seattleLocation.hourOperation.grandTotal;
+
   }
 }
 
