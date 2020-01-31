@@ -10,15 +10,15 @@ var seattleLocation = {
   custPerHour: function getRandomInt() {
     return Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour; 
   },
+  testVar: [],
   cookiesPerHour: function() {
-    var hoursOperation = ['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'];
-    var totalCookiesPerHour = 0;
-    var string = totalCookiesPerHour + ' cookies'
+    
     for (var i = 0; i < hoursOperation.length; i++) {
-      totalCookiesPerHour = Math.ceil(this.avgCookiePerCust * this.custPerHour());
-      return [hoursOperation[i], totalCookiesPerHour];
+      console.log('i is: ' + i);
+      this.testVar[i] = Math.ceil(this.testVar[i] = this.avgCookiePerCust * this.custPerHour());
+      console.log(`${hoursOperation[i]} ${this.testVar[i]} cookies.`);
     }
-     
+    return this.testVar[i];
   }
 };
 

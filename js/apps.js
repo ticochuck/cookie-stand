@@ -57,6 +57,7 @@ for (var i = 0; i < seattleLocation.hourOperation.length; i++) {
     listElement.textContent = seattleLocation.hourOperation[i].total + seattleLocation.hourOperation.grandTotal;
 
   }
+  console.log(seattleLocation.hourOperation[i]);
 }
 
 
