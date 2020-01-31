@@ -45,7 +45,7 @@ var seattleLocation = {
 
 seattleLocation.cookiesPerHour();
 
-var cookiesPerHourTokyoElement = document.getElementById('cookiesPerHour');
+var cookiesPerHourTokyoElement = document.getElementById('cookiesPerHourTokio');
 var tokyoElement = document.getElementById('tokyo');
 
 var tokyoLocation = {
@@ -78,3 +78,105 @@ var tokyoLocation = {
 };
 
 tokyoLocation.cookiesPerHour();
+
+var cookiesPerHourDubaiElement = document.getElementById('cookiesPerHourDubai');
+var dubaiElement = document.getElementById('dubai');
+
+var dubaiLocation = {
+  Location: 'Dubai',
+  minCustPerHour: 11,
+  maxCustPerHour: 38,
+  avgCookiePerCust: 3.7,
+  soldCookiesPerHour: [],
+  totalCookies: 0,
+  custPerHour: function getRandomInt() {
+    return Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour; 
+  },
+  cookiesPerHour: function() {  
+    var listLocationElement = document.createElement('h2');
+    listLocationElement.textContent = this.Location;
+    dubaiElement.appendChild(listLocationElement);
+    for (var i = 0; i < hoursOperation.length; i++) {
+      this.soldCookiesPerHour[i] = Math.ceil(this.soldCookiesPerHour[i] = this.avgCookiePerCust * this.custPerHour());
+      this.totalCookies = this.totalCookies + this.soldCookiesPerHour[i]; 
+      var listElement = document.createElement('li');
+      listElement.textContent = `${hoursOperation[i]} ${this.soldCookiesPerHour[i]} cookies.`;
+      cookiesPerHourDubaiElement.appendChild(listElement);
+    }
+    var listElement = document.createElement('li');
+    listElement.textContent = `Total: ${this.totalCookies} cookies`;
+    cookiesPerHourDubaiElement.appendChild(listElement);
+    
+    return this.soldCookiesPerHour;
+  }
+};
+
+dubaiLocation.cookiesPerHour();
+
+var cookiesPerHourDubaiElement = document.getElementById('cookiesPerHourParis');
+var dubaiElement = document.getElementById('paris');
+
+var parisLocation = {
+  Location: 'Paris',
+  minCustPerHour: 20,
+  maxCustPerHour: 38,
+  avgCookiePerCust: 2.3,
+  soldCookiesPerHour: [],
+  totalCookies: 0,
+  custPerHour: function getRandomInt() {
+    return Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour; 
+  },
+  cookiesPerHour: function() {  
+    var listLocationElement = document.createElement('h2');
+    listLocationElement.textContent = this.Location;
+    dubaiElement.appendChild(listLocationElement);
+    for (var i = 0; i < hoursOperation.length; i++) {
+      this.soldCookiesPerHour[i] = Math.ceil(this.soldCookiesPerHour[i] = this.avgCookiePerCust * this.custPerHour());
+      this.totalCookies = this.totalCookies + this.soldCookiesPerHour[i]; 
+      var listElement = document.createElement('li');
+      listElement.textContent = `${hoursOperation[i]} ${this.soldCookiesPerHour[i]} cookies.`;
+      cookiesPerHourDubaiElement.appendChild(listElement);
+    }
+    var listElement = document.createElement('li');
+    listElement.textContent = `Total: ${this.totalCookies} cookies`;
+    cookiesPerHourDubaiElement.appendChild(listElement);
+    
+    return this.soldCookiesPerHour;
+  }
+};
+
+parisLocation.cookiesPerHour();
+
+var cookiesPerHourDubaiElement = document.getElementById('cookiesPerHourLima');
+var dubaiElement = document.getElementById('lima');
+
+var limaLocation = {
+  Location: 'Lima',
+  minCustPerHour: 2,
+  maxCustPerHour: 16,
+  avgCookiePerCust: 4.6,
+  soldCookiesPerHour: [],
+  totalCookies: 0,
+  custPerHour: function getRandomInt() {
+    return Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour; 
+  },
+  cookiesPerHour: function() {  
+    var listLocationElement = document.createElement('h2');
+    listLocationElement.textContent = this.Location;
+    dubaiElement.appendChild(listLocationElement);
+    for (var i = 0; i < hoursOperation.length; i++) {
+      this.soldCookiesPerHour[i] = Math.ceil(this.soldCookiesPerHour[i] = this.avgCookiePerCust * this.custPerHour());
+      this.totalCookies = this.totalCookies + this.soldCookiesPerHour[i]; 
+      var listElement = document.createElement('li');
+      listElement.textContent = `${hoursOperation[i]} ${this.soldCookiesPerHour[i]} cookies.`;
+      cookiesPerHourDubaiElement.appendChild(listElement);
+    }
+    var listElement = document.createElement('li');
+    listElement.textContent = `Total: ${this.totalCookies} cookies`;
+    cookiesPerHourDubaiElement.appendChild(listElement);
+    
+    return this.soldCookiesPerHour;
+  }
+};
+
+limaLocation.cookiesPerHour();
