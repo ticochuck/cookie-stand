@@ -111,6 +111,7 @@ var dubaiLocation = {
   }
 };
 
+
 dubaiLocation.cookiesPerHour();
 
 var cookiesPerHourDubaiElement = document.getElementById('cookiesPerHourParis');
