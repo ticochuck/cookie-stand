@@ -1,9 +1,9 @@
 'use strict';
 var hoursOperation = [' 6am',' 7am',' 8am',' 9am','10am','11am','12pm',' 1pm',' 2pm',' 3pm',' 4pm',' 5pm',' 6pm',' 7pm'];
+var locationsAll = [];
 
-liEl = document.createElement('td');
-   
 for (var i = 0; i < hoursOperation.length; i++) {
+  
   var parentEl = document.getElementById('sales'); 
   var liEl = document.createElement('th');
     liEl.textContent = hoursOperation[i];
@@ -21,6 +21,7 @@ for (var i = 0; i < hoursOperation.length; i++) {
   this.avgCookiePerCust = avgCookiePerCust;
   this.soldCookiesPerHour = soldCookiesPerHour;
   this.totalCookies = totalCookies;
+  locationsAll.push(this);
 };
 
 var seattle = new Store('Seattle', 23, 65, 6.3, [], 0);
@@ -37,17 +38,12 @@ Store.prototype.custPerHour = function() {
 //generate total cookies sold per hour
 Store.prototype.cookiesPerHour = function() {
   for (var i = 0; i < hoursOperation.length; i++) {
-    this.soldCookiesPerHour[i] = Math.round(this.soldCookiesPerHour[i] = this.avgCookiePerCust * seattle.custPerHour());
+    this.soldCookiesPerHour[i] = Math.round(this.soldCookiesPerHour[i] = this.avgCookiePerCust * this.custPerHour());
     this.totalCookies += this.soldCookiesPerHour[i];
   }
   return this.soldCookiesPerHour;
 };
-lima.cookiesPerHour();
-paris.cookiesPerHour();
-dubai.cookiesPerHour();
-tokyo.cookiesPerHour();
-seattle.cookiesPerHour();
-console.log(seattle.totalCookies);
+
 Store.prototype.table2 = function () {
   var table = document.getElementById("sales");
   var row = table.insertRow(0);
@@ -60,16 +56,10 @@ Store.prototype.table2 = function () {
   }
   cell1.textContent = this.Location;
 };
-lima.table2();
-paris.table2();
-dubai.table2();
-tokyo.table2();
-seattle.table2();
-
 
 // Store.prototype.renderHours = function () {
 //   var parentEl = document.getElementById('sales'); 
-//   var liEl = document.createElement('tr');
+//   var liEl = document.createElement('th');
 //   for(var i = 0; i < hoursOperation.length; i++){
 //     var tdElement = document.createElement('td');
 //     tdElement.textContent = hoursOperation[i];
@@ -80,6 +70,13 @@ seattle.table2();
 //   parentEl.appendChild(liEl);
 // };
 // seattle.renderHours();
+
+//calling all the prototypes
+for (var x = 0; x < locationsAll.length; x++) {
+  locationsAll[x].cookiesPerHour();
+  locationsAll[x].table2();
+}
+
 
 //Object SEATTLE
 // var seattleLocation = {
