@@ -1,4 +1,5 @@
 'use strict';
+
 var hoursOperation = [' 6am',' 7am',' 8am',' 9am','10am','11am','12pm',' 1pm',' 2pm',' 3pm',' 4pm',' 5pm',' 6pm',' 7pm'];
 var allStores = [];
 var totalsPerHour = [];
@@ -73,7 +74,7 @@ for (var renderAllStores = 0; renderAllStores < allStores.length; renderAllStore
 // console.log(totalsPerHour)
 var hourlyTotals = function () { 
   renderInfo('tr');
-  renderInfo('td', 'Totals'); //appends footer for hourly totals  
+  renderInfo('td', 'Totals'); //appends footer for hourly totals 
   for (var a = 0; a < hoursOperation.length; a++) {
     var pleaseWork = 0;  
     for (var b = 0; b < allStores.length; b++) {
@@ -84,4 +85,3 @@ var hourlyTotals = function () {
   }
 }
 hourlyTotals();
-
