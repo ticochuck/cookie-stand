@@ -39,7 +39,7 @@ Store.prototype.custPerHour = function() {
 Store.prototype.cookiesPerHour = function() {
   for (var i = 0; i < hoursOperation.length; i++) {
     this.soldCookiesPerHour[i] = Math.round(this.soldCookiesPerHour[i] = this.avgCookiePerCust * this.custPerHour());
-    this.totalCookies += this.soldCookiesPerHour[i];
+    this.totalCookies += this.soldCookiesPerHour[i];    
   }
   return this.soldCookiesPerHour;
 };

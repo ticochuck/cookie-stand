@@ -13,6 +13,14 @@ th {
   background-color: blue;
 }
 
-tr {
+td {
   color:green;
+}
+
+tfoot {
+  margin-left: 30px;
+  padding-left: 10px;
+  color:yellow;
+  background-color: blue;
+  font-size: 20px;
 }
