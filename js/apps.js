@@ -73,15 +73,28 @@ for (var renderAllStores = 0; renderAllStores < allStores.length; renderAllStore
 
 // console.log(totalsPerHour)
 var hourlyTotals = function () { 
-  renderInfo('tr');
-  renderInfo('td', 'Totals'); //appends footer for hourly totals 
+  //renderInfo('tr');
+  var tableMain = document.getElementById('footer');
+  var tableData = document.createElement('tfoot');
+  tableData.textContent = 'Totals';
+  tableMain.appendChild(tableData); 
+  //renderInfo('td', 'Totals'); //appends footer for hourly totals 
+  var grandTotal = 0;
   for (var a = 0; a < hoursOperation.length; a++) {
     var pleaseWork = 0;  
     for (var b = 0; b < allStores.length; b++) {
       totalsPerHour[a] = allStores[b].soldCookiesPerHour[a]; 
+      
       pleaseWork += totalsPerHour[a];
     } 
-    renderInfo('td', pleaseWork);
+    grandTotal += pleaseWork;
+    var tableMain = document.getElementById('footer');
+    var tableData = document.createElement('td');
+    tableData.textContent = pleaseWork;
+    tableMain.appendChild(tableData); 
   }
+  var tableData = document.createElement('td');
+    tableData.textContent = grandTotal;
+    tableMain.appendChild(tableData);
 }
 hourlyTotals();
