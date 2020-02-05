@@ -59,11 +59,10 @@ Store.prototype.rederData = function() {
     if (i === 0) {
       renderInfo('td', this.Location); //appends location name to table
     }
-    renderInfo('td', this.soldCookiesPerHour[i]); //appends total cookies sold per hour
+    renderInfo('td', this.soldCookiesPerHour[i]); //appends total cookies sold per hour per store
   }
-  renderInfo('td', this.totalCookies); //appends total daily cookies
+  renderInfo('td', this.totalCookies); //appends total daily cookies per store
 };
-
 
 //render info calculated in the prototypes
 for (var renderAllStores = 0; renderAllStores < allStores.length; renderAllStores++) {
@@ -73,28 +72,28 @@ for (var renderAllStores = 0; renderAllStores < allStores.length; renderAllStore
 
 // console.log(totalsPerHour)
 var hourlyTotals = function () { 
-  //renderInfo('tr');
   var tableMain = document.getElementById('footer');
-  var tableData = document.createElement('tfoot');
+  var tableData = document.createElement('td');
   tableData.textContent = 'Totals';
-  tableMain.appendChild(tableData); 
-  //renderInfo('td', 'Totals'); //appends footer for hourly totals 
+  tableMain.appendChild(tableData);
+  
   var grandTotal = 0;
   for (var a = 0; a < hoursOperation.length; a++) {
     var pleaseWork = 0;  
     for (var b = 0; b < allStores.length; b++) {
       totalsPerHour[a] = allStores[b].soldCookiesPerHour[a]; 
-      
       pleaseWork += totalsPerHour[a];
     } 
     grandTotal += pleaseWork;
     var tableMain = document.getElementById('footer');
+    var tableData = document.createElement('tfoot');
     var tableData = document.createElement('td');
     tableData.textContent = pleaseWork;
     tableMain.appendChild(tableData); 
+    
   }
   var tableData = document.createElement('td');
-    tableData.textContent = grandTotal;
-    tableMain.appendChild(tableData);
+  tableData.textContent = grandTotal;
+  tableMain.appendChild(tableData);
 }
 hourlyTotals();
