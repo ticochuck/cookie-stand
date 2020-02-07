@@ -3,6 +3,8 @@
 /* Home Page Styling */
 
 body {
+  background-image: url(https://media2.giphy.com/media/rIz6sFp5v2GhW/source.gif);
+  background-repeat: no-repeat;
   background-color: slategray;
   width: 960px;
   margin: auto;
@@ -28,4 +30,14 @@ li {
   display: inline;
   text-align: center;
   vertical-align: middle;
+}
+
+table {
+    margin-left: 35%;
+    font-size: 22px;
+    color: white;
+}
+
+footer {
+  margin-top: 65%;
 }
