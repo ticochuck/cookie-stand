@@ -70,7 +70,6 @@ for (var renderAllStores = 0; renderAllStores < allStores.length; renderAllStore
   allStores[renderAllStores].rederData();
 }
 
-// console.log(totalsPerHour)
 var hourlyTotals = function () { 
   var tableMain = document.getElementById('footer');
   var tableData = document.createElement('td');
