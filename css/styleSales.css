@@ -1,0 +1,64 @@
+/* Sales Page styling */
+
+head footer{
+  width: 70%;
+}
+a {
+  display: block;
+  width: auto;
+  margin: 3% 15%;
+  font-size: 24px;
+}
+
+p {
+  text-align: right;
+}
+  
+#salesmain {
+  margin: 25px; 
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+  color: lightcoral;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+th {
+  vertical-align: middle;
+  margin: 30px 30px;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  border: solid lightcyan;
+  color:yellow;
+  background-color: lightcoral;
+}
+
+td {
+  border: 1px black dashed;
+  text-align: right;
+  font-size: 18px;
+  padding: 10px;
+  color:black;
+}
+
+tfoot td{
+  text-align: right;
+  border: solid lightcyan;
+  margin-left: 30px;
+  padding-left: 10px;
+  color:yellow;
+  background-color: lightcoral;
+  font-size: 20px;
+}
+
+td {
+  background-color: lightgray;
+  border-style: dashed;
+  border-color: lightcyan;
+}
