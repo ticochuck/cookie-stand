@@ -3,41 +3,32 @@
 /* Home Page Styling */
 
 body {
-  background-image: url(https://media2.giphy.com/media/rIz6sFp5v2GhW/source.gif);
-  background-repeat: no-repeat;
-  background-color: slategray;
+  background-color: lightslategray;
   width: 960px;
   margin: auto;
 }
 
-#salmonMainPic {
-  border: red;
-  border-radius: 35em;
+header {
+  margin: 3%;
   padding: 3%;
-}
-
-ul{
+  width: auto;
   border: 3px white solid;
-  margin-left: auto;
   border-radius: 35em;
-  display: inline;
-  padding: 30px 10px;
-  background-color: lightcoral; 
+  background-color: lightcoral;
 }
 
 li {
-  margin: 4%;
+  margin: 3%;
   display: inline;
   text-align: center;
   vertical-align: middle;
 }
 
-table {
-    margin-left: 35%;
-    font-size: 22px;
-    color: white;
-}
-
 footer {
-  margin-top: 65%;
+  margin: auto;
+  padding: 3%;
+  width: auto;
+  border: 3px white solid;
+  border-radius: 35em;
+  background-color: lightcoral;
 }
