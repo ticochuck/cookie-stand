@@ -78,16 +78,16 @@ var hourlyTotals = function () {
   
   var grandTotal = 0;
   for (var a = 0; a < hoursOperation.length; a++) {
-    var pleaseWork = 0;  
+    var hourlyTotalForAllStores = 0;  
     for (var b = 0; b < allStores.length; b++) {
       totalsPerHour[a] = allStores[b].soldCookiesPerHour[a]; 
-      pleaseWork += totalsPerHour[a];
+      hourlyTotalForAllStores += totalsPerHour[a];
     } 
-    grandTotal += pleaseWork;
+    grandTotal += hourlyTotalForAllStores;
     var tableMain = document.getElementById('footer');
     var tableData = document.createElement('tfoot');
     var tableData = document.createElement('td');
-    tableData.textContent = pleaseWork;
+    tableData.textContent = hourlyTotalForAllStores;
     tableMain.appendChild(tableData); 
     
   }
@@ -96,3 +96,35 @@ var hourlyTotals = function () {
   tableMain.appendChild(tableData);
 }
 hourlyTotals();
+
+
+//create new Store from User Input 
+var userData = [];
+
+var userForm = document.getElementById('newLocation');
+
+userForm.addEventListener('submit', handleSubmit);
+
+function handleSubmit(e) {
+    event.preventDefault();
+    var newLocationName = e.target.elementLocationName.value;
+    var newMinCustPerHour = parseInt(e.target.elementnewMinCustPerHour.value);
+    var newMaxCustPerHour = parseInt(e.target.elementnewMaxCustPerHour.value);
+    var newAvgCookiePerCust = parseFloat(e.target.elementnewAvgCookiePerCust.value);
+
+    userData.push(newLocationName, newMinCustPerHour, newMaxCustPerHour, newAvgCookiePerCust);
+
+    console.log(userData);
+    console.log(newLocationName, newMinCustPerHour, newMaxCustPerHour, newAvgCookiePerCust);
+    console.log(typeof newLocationName);
+    console.log(typeof newMinCustPerHour);
+    console.log(typeof newMaxCustPerHour);
+    console.log(typeof newAvgCookiePerCust);
+
+    e.target.elementLocationName.value = null;
+    e.target.elementnewMinCustPerHour.value = null;
+    e.target.elementnewMaxCustPerHour.value = null;
+    e.target.elementnewAvgCookiePerCust.value = null; 
+  }
+
+var newStoreFromUserInput = []
