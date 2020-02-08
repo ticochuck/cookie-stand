@@ -15,14 +15,15 @@ table {
 }
 
 th {
+  font-weight: bold;
   vertical-align: middle;
   margin: 30px 30px;
   padding: 10px;
   font-size: 20px;
   text-align: center;
   border: solid lightcyan;
-  color:yellow;
-  background-color: lightcoral;
+  color:black;
+  background-color: lightgray;
 }
 
 td {

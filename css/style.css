@@ -25,10 +25,18 @@ li {
 }
 
 footer {
-  margin: auto;
+  margin: 3%;
   padding: 3%;
   width: auto;
   border: 3px white solid;
   border-radius: 35em;
   background-color: lightcoral;
+}
+
+p {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 3%;
+  text-align: center;
+  vertical-align: middle;
 }
