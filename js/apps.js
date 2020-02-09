@@ -15,7 +15,6 @@ function Store(Location, minCustPerHour, maxCustPerHour, avgCookiePerCust, [], t
   allStores.push(this);
 };
 
-
 //create Stores for different locations
 new Store('Seattle', 23, 65, 6.3, [], 0);
 new Store('Tokyo', 3, 24, 1.2, [], 0);
@@ -23,47 +22,35 @@ new Store('Dubai', 11, 38, 3.7, [], 0);
 new Store('Paris', 20, 38, 2.3, [], 0);
 new Store('Lima', 2, 16, 4.6, [], 0);
 
-//create new Store from User Input 
-// var userData = [];
-// var userForm = document.getElementById('newLocation');
-// userForm.addEventListener('submit', handleSubmit);
+// create new Store from User Input 
+var userForm = document.getElementById('newLocation');
+userForm.addEventListener('submit', handleSubmit);
 
-// function handleSubmit(e) {
-//     event.preventDefault();
-//     var newLocationName = e.target.elementLocationName.value;
-//     var newMinCustPerHour = parseInt(e.target.elementnewMinCustPerHour.value);
-//     var newMaxCustPerHour = parseInt(e.target.elementnewMaxCustPerHour.value);
-//     var newAvgCookiePerCust = parseFloat(e.target.elementnewAvgCookiePerCust.value);
+function handleSubmit(e) {
+    event.preventDefault();
+    var newLocationName = e.target.elementLocationName.value;
+    var newMinCustPerHour = parseInt(e.target.elementnewMinCustPerHour.value);
+    var newMaxCustPerHour = parseInt(e.target.elementnewMaxCustPerHour.value);
+    var newAvgCookiePerCust = parseFloat(e.target.elementnewAvgCookiePerCust.value);
 
-    // allStores.push(newLocationName, newMinCustPerHour, newMaxCustPerHour, newAvgCookiePerCust);
-
-    // console.log(userData);
-    // console.log(userData[0]);
-    // console.log(newLocationName, newMinCustPerHour, newMaxCustPerHour, newAvgCookiePerCust);
-    // console.log(typeof newLocationName);
-    // console.log(typeof newMinCustPerHour);
-    // console.log(typeof newMaxCustPerHour);
-    // console.log(typeof newAvgCookiePerCust);
-
-    // var a = userData[0];
-    // var b = userData[1];
-    // var c = userData[2];
-    // var d = userData[3];
+    new Store(newLocationName, newMinCustPerHour, newMaxCustPerHour, newAvgCookiePerCust, [], 0);
     
-    // Store.Location = a;
-    // Store.minCustPerHour = b;
-    // Store.maxCustPerHour = c;
-    // Store.avgCookiePerCust = d;
+    for (var x = allStores.length-1; x > allStores.length-2; x--) {
+      allStores[x].cookiesPerHour();
+      allStores[x].rederData();
+    }
 
-    // new Store(newLocationName, newMinCustPerHour, newMaxCustPerHour, newAvgCookiePerCust, [], 0);
+    // var elem = document.querySelector('table');
+    // elem.parentNode.removeChild(elem);
     
-    // e.target.elementLocationName.value = null;
-    // e.target.elementnewMinCustPerHour.value = null;
-    // e.target.elementnewMaxCustPerHour.value = null;
-    // e.target.elementnewAvgCookiePerCust.value = null; 
-// }
-
-
+    // renderInfo();
+    hourlyTotals();
+    
+    e.target.elementLocationName.value = null;
+    e.target.elementnewMinCustPerHour.value = null;
+    e.target.elementnewMaxCustPerHour.value = null;
+    e.target.elementnewAvgCookiePerCust.value = null; 
+}
 
 //CALCULATIONS SECTION
 //generate random customers per hour
