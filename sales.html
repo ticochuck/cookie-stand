@@ -14,18 +14,19 @@
           </table>
           <form id="newLocation">
             <fieldset>
-              <Label>New Location Name:</Label>
-              <input id="elementLocationName" type="text" placeholder="Enter Location Name">
+              <Label>New Location Name: *</Label>
+              <input id="elementLocationName" type="text" required placeholder="Location Name">
 
-              <Label>Min Customers Per Hour:</Label>
-              <input id="elementnewMinCustPerHour" type="text" placeholder="Enter Min Cust Per Hour`">
+              <Label>Min Customers Per Hour: *</Label>
+              <input id="elementnewMinCustPerHour" type="number" required  placeholder="Must be an integer">
 
-              <Label>Max Customers Per Hour:</Label>
-              <input id="elementnewMaxCustPerHour" type="text" placeholder="Enter Max Cust Per Hour">
+              <Label>Max Customers Per Hour: *</Label>
+              <input id="elementnewMaxCustPerHour" type="number" required placeholder="Must be an integer">
               
-              <Label>Ave. Cookies Per Customer:</Label>
-              <input id="elementnewAvgCookiePerCust" type="text" placeholder="Enter Average Cookies Per Customer">
-
+              <Label>Avg. Cookies Per Customer: *</Label>
+              <input id="elementnewAvgCookiePerCust" type="text" required placeholder="Average Cookies Per Customer">
+              
+              <p>* Required field</p>
               <button value="submit">Submit</button>
 
             </fieldset>
