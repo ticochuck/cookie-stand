@@ -3,6 +3,7 @@
 var hoursOperation = [' 6am',' 7am',' 8am',' 9am','10am','11am','12pm',' 1pm',' 2pm',' 3pm',' 4pm',' 5pm',' 6pm',' 7pm'];
 var allStores = [];
 var totalsPerHour = [];
+var grandTotalPerHour = [];
 
 //this is my Object Constructor 
 function Store(Location, minCustPerHour, maxCustPerHour, avgCookiePerCust, [], totalCookies) {
@@ -32,18 +33,21 @@ function handleSubmit(e) {
     var newMinCustPerHour = parseInt(e.target.elementnewMinCustPerHour.value);
     var newMaxCustPerHour = parseInt(e.target.elementnewMaxCustPerHour.value);
     var newAvgCookiePerCust = parseFloat(e.target.elementnewAvgCookiePerCust.value);
-
+    grandTotalPerHour = [];
     new Store(newLocationName, newMinCustPerHour, newMaxCustPerHour, newAvgCookiePerCust, [], 0);
-    
+
     for (var x = allStores.length-1; x > allStores.length-2; x--) {
       allStores[x].cookiesPerHour();
       allStores[x].rederData();
     }
 
-    // var elem = document.querySelector('table');
-    // elem.parentNode.removeChild(elem);
-    
-    // renderInfo();
+    //delete 14 td elements in the footer 
+    for (var t=0; t<hoursOperation.length+2; t++){  
+      var elem = document.querySelector('td');
+      elem.parentNode.removeChild(elem);
+    };
+
+    //call hourlyTotals function to calculate the totals and append it to the footer
     hourlyTotals();
     
     e.target.elementLocationName.value = null;
@@ -64,7 +68,7 @@ Store.prototype.cookiesPerHour = function() {
     this.soldCookiesPerHour[j] = Math.round(this.soldCookiesPerHour[j] = this.avgCookiePerCust * this.custPerHour());
     this.totalCookies += this.soldCookiesPerHour[j];
   }
-};
+}
 
 //RENDERING SECTION
 //renderInfo function is used to pass info to the sales.html page using 2 parameters: create.element and text.content
@@ -112,12 +116,15 @@ var hourlyTotals = function () {
     for (var b = 0; b < allStores.length; b++) {
       totalsPerHour[a] = allStores[b].soldCookiesPerHour[a]; 
       hourlyTotalForAllStores += totalsPerHour[a];
+      
     } 
+    grandTotalPerHour.push(hourlyTotalForAllStores);
+      console.log(grandTotalPerHour);
     grandTotal += hourlyTotalForAllStores;
     var tableMain = document.getElementById('footer');
     var tableData = document.createElement('tfoot');
     var tableData = document.createElement('td');
-    tableData.textContent = hourlyTotalForAllStores;
+    tableData.textContent = grandTotalPerHour[a];
     tableMain.appendChild(tableData); 
     
   }
