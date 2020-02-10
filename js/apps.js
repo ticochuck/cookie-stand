@@ -29,11 +29,17 @@ userForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(e) {
     event.preventDefault();
+    
+      
     var newLocationName = e.target.elementLocationName.value;
+    
+    
     var newMinCustPerHour = parseInt(e.target.elementnewMinCustPerHour.value);
     var newMaxCustPerHour = parseInt(e.target.elementnewMaxCustPerHour.value);
     var newAvgCookiePerCust = parseFloat(e.target.elementnewAvgCookiePerCust.value);
     grandTotalPerHour = [];
+    
+    
     new Store(newLocationName, newMinCustPerHour, newMaxCustPerHour, newAvgCookiePerCust, [], 0);
 
     for (var x = allStores.length-1; x > allStores.length-2; x--) {
