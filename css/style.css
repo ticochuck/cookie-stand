@@ -11,12 +11,12 @@ body {
 a:visited, a:link {
   font-weight: bolder;
   font-size: 22px;
-  color: #82779E;
+  color: lightblue;
   text-decoration: none;
 }
 
 a:hover, a:active {
-  color: lightblue;
+  color: #82779E;
 }
 
 header {
@@ -37,12 +37,14 @@ li {
 }
 
 #bearEatting {
-  width: auto;
+  display: block;
+  width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
 
 h1 {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 35px;
   font-weight: bold;
   text-align: center;
@@ -52,14 +54,20 @@ h1 {
 }
 
 h2 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 22px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 28px;
   color: #FFC08F;
   text-align: center;
   margin: 1%;
   padding: 1%;
 }
   
+#aboutUsPic, #locationsPic{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 footer {
   margin: 3%;
   padding: 3%;
