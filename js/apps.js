@@ -29,9 +29,7 @@ userForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(e) {
     event.preventDefault();
-          
     var newLocationName = e.target.elementLocationName.value;
-      
     var newMinCustPerHour = parseInt(e.target.elementnewMinCustPerHour.value);
     var newMaxCustPerHour = parseInt(e.target.elementnewMaxCustPerHour.value);
     var newAvgCookiePerCust = parseFloat(e.target.elementnewAvgCookiePerCust.value);
@@ -119,7 +117,6 @@ var hourlyTotals = function () {
     for (var b = 0; b < allStores.length; b++) {
       totalsPerHour[a] = allStores[b].soldCookiesPerHour[a]; 
       hourlyTotalForAllStores += totalsPerHour[a];
-      
     } 
     grandTotalPerHour.push(hourlyTotalForAllStores);
       console.log(grandTotalPerHour);
@@ -128,8 +125,7 @@ var hourlyTotals = function () {
     var tableData = document.createElement('tfoot');
     var tableData = document.createElement('td');
     tableData.textContent = grandTotalPerHour[a];
-    tableMain.appendChild(tableData); 
-    
+    tableMain.appendChild(tableData);    
   }
   var tableData = document.createElement('td');
   tableData.textContent = grandTotal;
