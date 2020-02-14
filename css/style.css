@@ -31,7 +31,6 @@ li {
   display: inline;
   text-align: center;
   vertical-align: middle;
-  
 }
 
 #bearEatting {
@@ -100,6 +99,7 @@ p {
 #hours {
   text-align: center;
 }
+
 .pText {
   font-size: 18px;
   font-weight: normal;
@@ -112,6 +112,7 @@ p {
 #someFish, #locationsPic {
   display: inline;
   margin-left: 55px;
+  margin-bottom: 35px;
 }
 
 .salesPics {
