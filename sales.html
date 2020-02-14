@@ -3,7 +3,7 @@
     <head>
         <title>Sales Data</title>
         <link href="css/reset.css" type="text/css" rel="stylesheet">
-        <link href="css/styleSales.css" type="text/css" rel="stylesheet">
+        <link href="css/style.css" type="text/css" rel="stylesheet">
     </head>
     <body>
         <main>
@@ -13,7 +13,8 @@
             </tfoot>
           </table>
           <form id="newLocation">
-            <fieldset>
+            <fieldset id="newStore">
+              <p>Add a Store</p>
               <Label>New Location Name: *</Label>
               <input id="elementLocationName" type="text" required placeholder="Location Name">
 
@@ -26,14 +27,13 @@
               <Label>Avg. Cookies Per Customer: *</Label>
               <input id="elementnewAvgCookiePerCust" type="text" required placeholder="Average Cookies Per Customer">
               
-              <p>* Required field</p>
               <button value="submit">Submit</button>
 
             </fieldset>
           </form>
-          <img src="img/cutter.jpeg" alt="fish">
-          <img src="img/frosted-cookie.jpg" alt="fish">
-          <img src="img/shirt.jpg" alt="fish">
+          <img class="salesPics" src="img/cutter.jpeg" alt="fish" width="200px">
+          <img class="salesPics" src="img/frosted-cookie.jpg" alt="fish">
+          <img class="salesPics" src="img/shirt.jpg" alt="fish" width="200px">
         </main>
         
         <script type="text/javascript" src="js/apps.js"></script>
